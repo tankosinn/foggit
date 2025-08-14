@@ -25,6 +25,9 @@ jobs:
       - name: Generate Prisma client
         run: pnpm db:generate
 
+      - name: Build packages
+        run: pnpm dev:prepare
+
       - name: Lint
         run: pnpm lint
 
@@ -51,6 +54,9 @@ jobs:
 
       - name: Generate Prisma client
         run: pnpm db:generate
+
+      - name: Build packages
+        run: pnpm dev:prepare
 
       - name: Build
         run: pnpm build
