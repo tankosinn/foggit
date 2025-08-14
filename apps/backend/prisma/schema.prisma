@@ -1,0 +1,79 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id         Int               @id @default(autoincrement())
+  uuid       String            @unique @default(uuid())
+  fullName   String            @db.VarChar(255)
+  email      String            @unique @db.VarChar(254) // https://datatracker.ietf.org/doc/html/draft-klensin-name-filters-03#section-3
+  password   String?           @db.VarChar(60)
+  createdAt  DateTime          @default(now())
+  updatedAt  DateTime          @updatedAt
+  workspaces WorkspaceMember[]
+}
+
+model Workspace {
+  id        Int               @id @default(autoincrement())
+  uuid      String            @unique @default(uuid())
+  name      String            @db.VarChar(50)
+  createdAt DateTime          @default(now())
+  updatedAt DateTime          @updatedAt
+  members   WorkspaceMember[]
+}
+
+model WorkspaceMember {
+  id          Int          @id @default(autoincrement())
+  uuid        String       @unique @default(uuid())
+  workspaceId Int
+  userId      Int
+  role        Role         @default(MEMBER)
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+  weatherLogs WeatherLog[]
+
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  workspace Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+
+  @@unique([workspaceId, userId])
+}
+
+model Onboarding {
+  id        Int            @id @default(autoincrement())
+  uuid      String         @unique @default(uuid())
+  email     String         @db.VarChar(254)
+  step      OnboardingStep
+  data      Json           @db.JsonB
+  createdAt DateTime       @default(now())
+  updatedAt DateTime       @updatedAt
+
+  @@unique([email, step])
+}
+
+model WeatherLog {
+  id                Int      @id @default(autoincrement())
+  uuid              String   @unique @default(uuid())
+  workspaceMemberId Int
+  query             Json
+  weather           Json
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  workspaceMember WorkspaceMember @relation(fields: [workspaceMemberId], references: [id], onDelete: Cascade)
+}
+
+enum Role {
+  ADMIN
+  MEMBER
+}
+
+enum OnboardingStep {
+  PROFILE
+  WORKSPACE
+}

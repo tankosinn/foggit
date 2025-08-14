@@ -1,0 +1,75 @@
+# Dependencies
+node_modules
+.pnpm-store
+package-lock.json
+
+# Generated
+dist
+generated
+.nuxt
+.nuxt-*
+.output
+.output-*
+.vercel
+.vercel_build_output
+.netlify
+.build-*
+.gen
+.test
+
+# Temporary
+.cache
+.eslintcache
+.temp
+.tmp
+coverage
+
+# Logs
+*.log
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Diagnostic reports (https://nodejs.org/api/report.html)
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+# IntelliJ IDEA / Fleet
+*.iml
+.idea
+.fleet
+
+# Visual Studio Code
+.vscode/*
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/settings.json
+!.vscode/tasks.json
+
+# OSX
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
