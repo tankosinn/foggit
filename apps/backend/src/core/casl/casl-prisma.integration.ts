@@ -19,8 +19,8 @@ interface PrismaQueryTypeFactory extends hkt.GenericFactory {
 
 type PrismaModel = Model<Record<string, any>, string>
 // Higher Order type that allows to infer passed in Prisma Model name
-export type PrismaQuery<T extends PrismaModel = PrismaModel> =
-  WhereInput<ExtractModelName<T, ModelName>> & hkt.Container<PrismaQueryTypeFactory>
+export type PrismaQuery<T extends PrismaModel = PrismaModel>
+  = WhereInput<ExtractModelName<T, ModelName>> & hkt.Container<PrismaQueryTypeFactory>
 
 type WhereInputPerModel = {
   [K in ModelName]: WhereInput<K>;
