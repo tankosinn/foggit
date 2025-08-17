@@ -36,8 +36,8 @@ importers:
         specifier: ^1.5.2
         version: 1.5.2(@casl/ability@6.7.3)(@prisma/client@6.14.0(prisma@6.14.0(magicast@0.3.5)(typescript@5.9.2))(typescript@5.9.2))
       '@keyv/redis':
-        specifier: ^5.1.0
-        version: 5.1.0(keyv@5.5.0)
+        specifier: ^5.1.1
+        version: 5.1.1(keyv@5.5.0)
       '@nestjs-modules/mailer':
         specifier: ^2.0.2
         version: 2.0.2(@nestjs/common@11.1.6(class-transformer@0.5.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@11.1.6)(nodemailer@7.0.4)
@@ -794,8 +794,8 @@ packages:
   '@kayahr/text-encoding@2.0.1':
     resolution: {integrity: sha512-OUsJJVn85VrfNiiT6CSbHK2Jr9YS6tVsgQhly+EkcbYTT2SXeibU4nQNO2IzCRttKJt4zw4W60KtLifRRJBIng==}
 
-  '@keyv/redis@5.1.0':
-    resolution: {integrity: sha512-89qUAT0+5m3/w/n438yR8fmrWvy0cWTbwp+hKAQrw52otaKalogag+Cj3uOUV4qAly5iusmeCSD/hyepFsHgdw==}
+  '@keyv/redis@5.1.1':
+    resolution: {integrity: sha512-bPypEnO2uSDjrgDP2whyewZ2R8aAJvoLM2440J1omjpJnzv1Awzs3RIztQGoDafNhPe0dZeI+44XKCdSiWkgTg==}
     engines: {node: '>= 18'}
     peerDependencies:
       keyv: ^5.5.0
@@ -5812,7 +5812,7 @@ snapshots:
 
   '@kayahr/text-encoding@2.0.1': {}
 
-  '@keyv/redis@5.1.0(keyv@5.5.0)':
+  '@keyv/redis@5.1.1(keyv@5.5.0)':
     dependencies:
       '@redis/client': 5.8.1
       cluster-key-slot: 1.1.2
