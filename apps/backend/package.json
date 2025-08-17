@@ -20,7 +20,7 @@
   "dependencies": {
     "@casl/ability": "^6.7.3",
     "@casl/prisma": "^1.5.2",
-    "@keyv/redis": "^5.1.0",
+    "@keyv/redis": "^5.1.1",
     "@nestjs-modules/mailer": "^2.0.2",
     "@nestjs/cache-manager": "^3.0.1",
     "@nestjs/common": "^11.1.6",
