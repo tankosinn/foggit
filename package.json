@@ -22,7 +22,7 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "5.2.1",
-    "eslint": "9.33.0",
+    "eslint": "9.34.0",
     "installed-check": "9.3.0",
     "lint-staged": "16.1.5",
     "sherif": "1.6.1",
